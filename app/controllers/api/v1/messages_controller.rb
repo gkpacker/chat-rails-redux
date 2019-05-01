@@ -18,7 +18,9 @@ class Api::V1::MessagesController < ApplicationController
   private
 
   def set_channel
-    @channel = Channel.find_by(name: params[:name])
+    @channel = Channel.find_by(name: params[:channel_id])
+
+    render json: { error: "Couldn't find #{params[:channel_id]} channel." } if @channel.blank?
   end
 
   def message_params
