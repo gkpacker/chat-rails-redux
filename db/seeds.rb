@@ -24,7 +24,7 @@ end
 puts '######### DONE #########'
 
 puts '######### CREATING DEFAULT CHANNELS #########'
-['São Paulo', 'Paris', 'React'].each do |channel_name|
+['general', 'paris', 'react'].each do |channel_name|
   Channel.create!(name: channel_name)
 end
 puts '######### DONE #########'
